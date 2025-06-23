@@ -16,6 +16,8 @@ namespace AppRpgEtec.ViewModels
         
         private PersonagemService pService;
         public ICommand SalvarCommand { get; }
+
+        public ICommand CancelarCommand { get; set; }
         public CadastroPersonagemViewModel()
         {
             string token = Preferences.Get("UsuarioToken", string.Empty);
@@ -23,6 +25,12 @@ namespace AppRpgEtec.ViewModels
             _ = ObterClasses();
 
             SalvarCommand = new Command(async () => { await SalvarPersonagem(); });
+            CancelarCommand = new Command(async => CancelarCadastro());
+
+        }
+        private async void CancelarCadastro()
+        {
+            await Shell.Current.GoToAsync("..");
         }
 
         private int id;

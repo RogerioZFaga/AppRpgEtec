@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppRpgEtec.Views.Personagens.CadastroPersonagemView"
+             Shell.PresentationMode="Animated"
              Title="CadastroPersonagemView">
     <ScrollView>
         <VerticalStackLayout Spacing="3" Padding="15">
@@ -26,6 +27,8 @@
             <Entry Text="{Binding Derrotas}" FontSize="Medium" Keyboard="Numeric" />
             <HorizontalStackLayout Spacing="20">
                 <Button Text="Salvar" Command="{Binding SalvarCommand}"></Button>
+                <Button Text="Cancel" Command="{Binding CancelarCommand}"></Button>
             </HorizontalStackLayout>
         </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
