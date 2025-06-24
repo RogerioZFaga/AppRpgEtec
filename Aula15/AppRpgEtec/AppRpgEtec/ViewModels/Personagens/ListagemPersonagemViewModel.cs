@@ -51,5 +51,20 @@ namespace AppRpgEtec.ViewModels.Personagens
 
             }
         }
+
+        private Personagem personagemSelecionado;
+        public Personagem PersonagemSelecionado
+        {
+            get { return personagemSelecionado; }
+            set
+            {
+                if (value != null)
+                {
+                    personagemSelecionado = value;
+
+                    Shell.Current.GoToAsync($"cadPersonagemView?pId={personagemSelecionado.Id}");
+                }
+            }
+        }
     }
 }
